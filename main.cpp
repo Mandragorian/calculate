@@ -17,10 +17,13 @@ int main(int argc, char* argv[])
    {
       cout <<"is in the main section\n";
       asd.interface(argv);
+      cout << "prin to telos\n";
       return 0;
    }
    else 
    {
       cout << "this will be the help section \n";
    }
+
+   cout <<"telos \n";
 }
