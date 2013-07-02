@@ -2,14 +2,14 @@
 #include <string>
 
 
-class handler{
 
+class handler{
 
    public:
 handler();
 void interface(char* []);
 
-
 };
 
-float calculate(std::string);
+std::string calculate(std::string);
+std::string postfix(std::string);
