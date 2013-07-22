@@ -11,5 +11,13 @@ void interface(char* []);
 
 };
 
-std::string calculate(std::string);
+class calculator{
+
+   public:
+std::string evexpr(std::string);
+   private:
 std::string postfix(std::string);
+bool isOperator(char);
+bool precedes(char,char);
+
+};

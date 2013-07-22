@@ -3,20 +3,20 @@
 #include <stack>
 
 
-std::string calculate(std::string input)
-{
-   std::cout << postfix(input) << " " << "klisi calculate" << "\n";
-   return "test";
-}
+//std::string calculate(std::string input)
+//{
+//   std::cout << postfix(input) << " " << "klisi calculate" << "\n";
+//   return "test";
+//}
 
 
-bool isOperator(char in)
+bool calculator::isOperator(char in)
 {
    if ((in=='+')||(in=='*')||(in=='-')||(in=='/')||(in=='^')) return true;
    else return false;
 }
 
-bool precedes(char x, char y)
+bool calculator::precedes(char x, char y)
 {
    if(x=='^') return true;
    else if ((x=='*')||(x=='/'))
@@ -32,7 +32,7 @@ bool precedes(char x, char y)
    }
 }
 
-std::string postfix(std::string foo )
+std::string calculator:: postfix(std::string foo )
 {
    std::string posstr="";
    std::stack<char> stack;

@@ -12,8 +12,8 @@ int main(int argc, char* argv[])
 {
    
    handler asd;
-
-   if(argc>1)
+   //cout << argc << argv[0]  <<"\n";
+   if(argc>2)
    {
       cout <<"is in the main section\n";
       asd.interface(argv);
