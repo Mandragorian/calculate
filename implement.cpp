@@ -11,7 +11,7 @@ void handler::interface(char* arguments[])
    {
       case 'c': 
        std::cout << "mpike sto case c\n";
-       smart.evexpr(arguments[2]);
+       std::cout << smart.evexpr(arguments[2]) <<"\n"  ;
        std::cout << "teleiose to calculate\n";
        break;
       default:
