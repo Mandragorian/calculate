@@ -27,7 +27,7 @@ string calculator::evexpr(string expr)
          binop.code=OP;
          binop.data=posstr[i];
          mstack.push(binop);
-	 //cout << mstack.top().data << "\n";
+
       }
       else
       {
@@ -40,29 +40,25 @@ string calculator::evexpr(string expr)
             constant.data+=posstr[i];
             i--;   
          }
-         //cout << posstr[i];
-	  //prosperna to #
-	 //cout << "const data:" << constant.data << "\n";         
-	 //cout << i << "\n";
+
+	 //to while stamataei sto # kathe fora. logo to for loop to i tha miothei mia akoma fora opote tha to kseperasei kai tha paei ston epomeno arithmo i telesti
+      
+
 	 
 	 if(mstack.top().code==OP) 
 	 {
 	    mstack.push(constant);
-	    //cout << mstack.top().data << "\n";
 	 }
          else 
 	 {
-	    //edo tha mpei ot kommati pou ipologizei to apotelesma enos operator pou einai resolved
- 	    //cout << "kanei praksi \n";
-            node argument=mstack.top();
+	    node argument=mstack.top();
 	    mstack.pop();
             node binop=mstack.top();
 	    mstack.pop();            
 
 	    float arg1 = mkFloat(constant.data);
-	    //cout <<"arg1: " << arg1 << "\n";
 	    float arg2 = mkFloat(argument.data);
-	    //cout <<"arg2: " <<  arg2 << "\n";
+	    
 
             if(binop.data=="+") constant.data=mkStr(arg1+arg2);
 	    else if(binop.data=="-") constant.data=mkStr(arg1-arg2);
@@ -74,22 +70,11 @@ string calculator::evexpr(string expr)
 	 }
 	 
       }
-   //std::cout << mstack.top().data << "\n"<< i << "\n" ;
+   
    } 
-   //cout << posstr;
-   //cout << "\n";
-
-   //if((posstr.find('+')==posstr.length()-1)||(posstr.find('-')==posstr.length()-1)||(posstr.find('*')==posstr.length()-1)||(posstr.find('/')==posstr.length()-1)||(posstr.find('^')==posstr.length()-1))
-   //   cout<<"yes\n";
-
-   //cout << mstack.top().data << "\n";
-   //cout << mstack.size() << "\n";
+   
    while(mstack.size()>1)
    {
-      //cout << mstack.top().data << "\n";
-      //mstack.pop();
-      
-
       node constant1, constant2;
       node binop;
    
@@ -102,9 +87,8 @@ string calculator::evexpr(string expr)
       mstack.pop();
 
       float arg1 = mkFloat(constant1.data);
-      cout << arg1 << "\n";
       float arg2 = mkFloat(constant2.data);
-      cout << arg2 << "\n";
+      
       if(binop.data=="+") constant1.data=mkStr(arg1+arg2);
       else if(binop.data=="-") constant1.data=mkStr(arg1-arg2);
       else if(binop.data=="*") constant1.data=mkStr(arg1*arg2);
